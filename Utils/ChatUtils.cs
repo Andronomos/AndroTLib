@@ -2,7 +2,7 @@
 using Terraria.Chat;
 using Terraria.Localization;
 
-namespace AndroTLib.Utils.Chat;
+namespace AndroTLib.Utils;
 
 public static class ChatUtils
 {
