@@ -6,7 +6,7 @@ namespace AndroTLib.Utils;
 
 public static class ChatUtils
 {
-    public static void DisplayInfo(NetworkText message, bool broadcast)
+    public static void DisplayInfo(NetworkText message, bool broadcast = true)
     {
         if (broadcast)
         {
@@ -17,7 +17,7 @@ public static class ChatUtils
         ChatHelper.DisplayMessage(message, Color.Cyan, byte.MaxValue);
     }
 
-    public static void DisplayWarning(NetworkText message, bool broadcast)
+    public static void DisplayWarning(NetworkText message, bool broadcast = true)
     {
         if (broadcast)
         {
@@ -28,7 +28,7 @@ public static class ChatUtils
         ChatHelper.DisplayMessage(message, Color.Yellow, byte.MaxValue);
     }
 
-    public static void DisplayError(NetworkText message, bool broadcast)
+    public static void DisplayError(NetworkText message, bool broadcast = true)
     {
         if (broadcast)
         {
