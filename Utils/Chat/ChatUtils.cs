@@ -6,40 +6,40 @@ namespace AndroTLib.Utils.Chat;
 
 public static class ChatUtils
 {
-    public static void DisplayInfo(string message, bool broadcast)
+    public static void DisplayInfo(NetworkText message, bool broadcast)
     {
         if (broadcast)
         {
-            ChatHelper.BroadcastChatMessage(AsLiteral(message), Color.Cyan);
+            ChatHelper.BroadcastChatMessage(message, Color.Cyan);
             return;
         }
 
-        ChatHelper.DisplayMessage(AsLiteral(message), Color.Cyan, byte.MaxValue);
+        ChatHelper.DisplayMessage(message, Color.Cyan, byte.MaxValue);
     }
 
-    public static void DisplayWarning(string message, bool broadcast)
+    public static void DisplayWarning(NetworkText message, bool broadcast)
     {
         if (broadcast)
         {
-            ChatHelper.BroadcastChatMessage(AsLiteral(message), Color.Yellow);
+            ChatHelper.BroadcastChatMessage(message, Color.Yellow);
             return;
         }
 
-        ChatHelper.DisplayMessage(AsLiteral(message), Color.Yellow, byte.MaxValue);
+        ChatHelper.DisplayMessage(message, Color.Yellow, byte.MaxValue);
     }
 
-    public static void DisplayError(string message, bool broadcast)
+    public static void DisplayError(NetworkText message, bool broadcast)
     {
         if (broadcast)
         {
-            ChatHelper.BroadcastChatMessage(AsLiteral(message), Color.Red);
+            ChatHelper.BroadcastChatMessage(message, Color.Red);
             return;
         }
 
-        ChatHelper.DisplayMessage(AsLiteral(message), Color.Red, byte.MaxValue);
+        ChatHelper.DisplayMessage(message, Color.Red, byte.MaxValue);
     }
 
-    private static NetworkText AsLiteral(string message)
+    public static NetworkText AsLiteral(string message)
     {
         return NetworkText.FromLiteral(message);
     }
