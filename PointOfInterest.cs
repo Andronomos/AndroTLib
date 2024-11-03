@@ -6,6 +6,7 @@ public enum PointOfInterest
     Home,
     LivingTree,
     Meteorite,
+    Ocean,
     Spawn,
     Temple,
     Underworld
