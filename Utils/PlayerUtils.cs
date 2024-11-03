@@ -22,7 +22,6 @@ public static class PlayerUtils
                 break;
             default:
             case PointOfInterest.Home:
-                //HandleHomeTeleport(player);
                 player.Spawn(PlayerSpawnContext.RecallFromItem);
                 break;
             case PointOfInterest.LivingTree:
@@ -49,18 +48,6 @@ public static class PlayerUtils
     internal static void HandleDungeonTeleport(Player player)
     {
 
-    }
-
-    internal static void HandleHomeTeleport(Player player)
-    {
-        //Vector2 location = new(player.SpawnX, player.SpawnY);
-
-        //if (player.SpawnX <= 0 && player.SpawnY <= 0)
-        //{
-        //    HandleSpawnTeleport(player);
-        //}
-
-        //Teleport(player, location);        
     }
 
     internal static void HandleLivingTreeTeleport(Player player)
