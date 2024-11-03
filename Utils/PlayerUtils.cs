@@ -48,7 +48,7 @@ public static class PlayerUtils
 
     internal static void HandleHomeTeleport(Player player)
     {
-        Vector2 location = new(Main.spawnTileX, Main.spawnTileY);
+        Vector2 location = new(player.SpawnX, player.SpawnY);
 
         if (player.SpawnX <= 0 && player.SpawnY <= 0)
         {
