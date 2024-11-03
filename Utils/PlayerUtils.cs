@@ -50,12 +50,12 @@ public static class PlayerUtils
     {
         Vector2 location = new(Main.spawnTileX, Main.spawnTileY);
 
-        if (player.SpawnX >= 0 && player.SpawnY >= 0)
+        if (player.SpawnX <= 0 && player.SpawnY <= 0)
         {
-            location = new(player.SpawnX, player.SpawnY);
+            HandleSpawnTeleport(player);
         }
 
-        Teleport(player, location);
+        Teleport(player, location);        
     }
 
     internal static void HandleLivingTreeTeleport(Player player)
