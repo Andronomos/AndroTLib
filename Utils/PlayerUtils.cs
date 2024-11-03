@@ -1,11 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 
@@ -18,7 +11,7 @@ public static class PlayerUtils
         switch (poi)
         {
             case PointOfInterest.Dungeon:
-                HandleDungeonTeleport(player);
+                Teleport(player, new(Main.dungeonX, Main.dungeonY), true);
                 break;
             default:
             case PointOfInterest.Home:
@@ -34,7 +27,7 @@ public static class PlayerUtils
                 player.MagicConch();
                 break;
             case PointOfInterest.Spawn:
-                Teleport(player, new(Main.spawnTileX, Main.spawnTileY));
+                Teleport(player, new(Main.spawnTileX, Main.spawnTileY), true);
                 break;
             case PointOfInterest.Temple:
                 HandleTempleTeleport(player);
@@ -78,5 +71,13 @@ public static class PlayerUtils
         }
 
         player.Teleport(destination, 2, 0);
+
+        for (int index = 0; index < 70; index++)
+        {
+            Dust obj = Main.dust[Dust.NewDust(player.position, player.width, player.height, DustID.MagicMirror, player.velocity.X * 0.2f, player.velocity.Y * 0.2f, 150, Color.DarkRed, 1.2f)];
+            obj.velocity *= 0.5f;
+        }
+
+        Main.TeleportEffect(player.getRect(), 3, 0, 1f, 0, default);
     }
 }
