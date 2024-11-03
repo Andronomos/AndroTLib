@@ -30,7 +30,7 @@ public static class PlayerUtils
                 HandleMeteoriteTeleport(player);
                 break;
             case PointOfInterest.Ocean:
-                HandleOceanTeleport(player);
+                player.MagicConch();
                 break;
             case PointOfInterest.Spawn:
                 HandleSpawnTeleport(player);
@@ -39,7 +39,7 @@ public static class PlayerUtils
                 HandleTempleTeleport(player);
                 break;
             case PointOfInterest.Underworld:
-                HandleUnderworldTeleport(player);
+                player.DemonConch();
                 break;
         }
     }
@@ -71,11 +71,6 @@ public static class PlayerUtils
 
     }
 
-    private static void HandleOceanTeleport(Player player)
-    {
-        player.MagicConch();
-    }
-
     internal static void HandleSpawnTeleport(Player player)
     {
         Teleport(player, new(Main.spawnTileX, Main.spawnTileY));
@@ -84,11 +79,6 @@ public static class PlayerUtils
     internal static void HandleTempleTeleport(Player player)
     {
 
-    }
-
-    internal static void HandleUnderworldTeleport(Player player)
-    {
-        player.DemonConch();
     }
 
     internal static void Teleport(Player player, Vector2 destination)
