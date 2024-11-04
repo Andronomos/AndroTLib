@@ -17,12 +17,6 @@ public static class PlayerUtils
             case PointOfInterest.Home:
                 player.Spawn(PlayerSpawnContext.RecallFromItem);
                 break;
-            case PointOfInterest.LivingTree:
-                HandleLivingTreeTeleport(player);
-                break;
-            case PointOfInterest.Meteorite:
-                HandleMeteoriteTeleport(player);
-                break;
             case PointOfInterest.Ocean:
                 player.MagicConch();
                 break;
@@ -38,21 +32,6 @@ public static class PlayerUtils
         }
     }
 
-    internal static void HandleDungeonTeleport(Player player)
-    {
-
-    }
-
-    internal static void HandleLivingTreeTeleport(Player player)
-    {
-
-    }
-
-    internal static void HandleMeteoriteTeleport(Player player)
-    {
-
-    }
-
     internal static void HandleTempleTeleport(Player player)
     {
         Vector2 templePosition = WorldUtils.GetTempleLocation();
@@ -63,9 +42,9 @@ public static class PlayerUtils
         }
     }
 
-    internal static void Teleport(Player player, Vector2 destination, bool convertFromTiles = false)
+    internal static void Teleport(Player player, Vector2 destination, bool convertFromTileCoords = false)
     {
-        if (convertFromTiles)
+        if (convertFromTileCoords)
         {
             destination = new(destination.X * 16f + 8f - player.width / 2, destination.Y * 16f - player.height);
         }
